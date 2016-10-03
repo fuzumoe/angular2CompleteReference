@@ -1,10 +1,9 @@
 import { Directive, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[rbdropdown]'
+  selector: '[rbDropdown]'
 })
 export class DropdownDirective {
-   private isOpen = false;
   @HostBinding('class.open') get opened() {
     return this.isOpen;
   }
@@ -14,7 +13,5 @@ export class DropdownDirective {
   @HostListener('mouseleave') close() {
     this.isOpen = false;
   }
- 
-
-
+  private isOpen = false;
 }
